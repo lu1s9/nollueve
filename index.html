@@ -25,6 +25,8 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <script defer src="https://analytics.lu1s9.dev/script.js" data-website-id="80c665d0-c592-4432-a898-177cfc9bf4bd"></script>
+
   <style>
     body {
       background:
@@ -246,6 +248,10 @@
       historicalDryRate: 0.73,
     };
 
+    // ----- Analytics helper (silently no-ops if Umami is blocked) -----
+    const TRACK_MILESTONES = [1, 10, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000];
+    const track = (name, props) => { try { window.umami?.track(name, props); } catch (_) {} };
+
     // Personalize from URL hash: #nombre=Ana
     const hashParams = new URLSearchParams(location.hash.slice(1));
     const customName = hashParams.get('nombre');
@@ -254,6 +260,7 @@
       if (safe) {
         document.getElementById('greeting').textContent = safe;
         CONFIG.friendName = safe;
+        track('personalized_view');
       }
     }
 
@@ -427,6 +434,7 @@
           err.classList.remove('hidden');
         }
         err.classList.remove('hidden');
+        track('forecast_error', { reason: e.message || 'unknown' });
       }
     }
     loadForecast();
@@ -505,6 +513,8 @@
       updateProgression();
       showMilestone();
 
+      if (TRACK_MILESTONES.includes(count)) track('ritual_milestone', { count });
+
       if (navigator.vibrate) navigator.vibrate(30);
 
       // Sun-rise visual flourish on first time crossing thresholds
@@ -524,6 +534,7 @@
         text: `Pronóstico ritual para BTS en CDMX el 9 de mayo. Cada clic aleja una nube.`,
         url: location.href.split('#')[0],
       };
+      track('share_click', { method: navigator.share ? 'native' : 'clipboard' });
       try {
         if (navigator.share) {
           await navigator.share(shareData);
