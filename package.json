@@ -1,0 +1,13 @@
+{
+  "name": "ritual-9-mayo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "serve": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

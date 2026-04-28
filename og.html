@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>OG image — exporta esta página a 1200x630 PNG</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0f172a;
+      background:
+        radial-gradient(ellipse at 15% 0%, #fef3c7 0%, transparent 55%),
+        radial-gradient(ellipse at 95% 15%, #ffe4e6 0%, transparent 50%),
+        linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 40%, #fef9c3 100%);
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 50px; left: 56px;
+      font-size: 14px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+
+    .stamp {
+      position: absolute;
+      top: 40px; right: 56px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(15,23,42,.06);
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #475569;
+    }
+    .stamp .dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; box-shadow: 0 0 0 4px rgba(245,158,11,.2); }
+
+    h1 {
+      position: absolute;
+      top: 130px; left: 56px;
+      font-family: 'Fraunces', 'Georgia', serif;
+      font-weight: 800;
+      font-size: 108px;
+      line-height: .94;
+      letter-spacing: -.02em;
+      color: #0f172a;
+    }
+    h1 .name { background: linear-gradient(90deg, #f59e0b 0%, #ec4899 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    .sub {
+      position: absolute;
+      top: 380px; left: 56px;
+      font-size: 22px;
+      color: #475569;
+      max-width: 720px;
+      line-height: 1.4;
+    }
+    .sub strong { color: #0f172a; font-weight: 600; }
+
+    .meta {
+      position: absolute;
+      top: 530px; left: 56px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #475569;
+    }
+
+    .stat {
+      position: absolute;
+      top: 460px; right: 56px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(15,23,42,.06);
+      border-radius: 18px;
+      padding: 18px 26px;
+      text-align: center;
+      width: 280px;
+    }
+    .stat .num {
+      font-family: 'Fraunces', 'Georgia', serif;
+      font-weight: 800;
+      font-size: 72px;
+      line-height: 1;
+      color: #0f172a;
+      letter-spacing: -.02em;
+    }
+    .stat .num sup { font-size: 30px; color: #d97706; vertical-align: super; }
+    .stat .label {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .c1 { position: absolute; top: 80px;  right: 320px; font-size: 80px; opacity: .5; filter: drop-shadow(0 6px 12px rgba(15,23,42,.08)); }
+    .c2 { position: absolute; top: 200px; right: 110px; font-size: 56px; opacity: .35; }
+    .c3 { position: absolute; top: 340px; right: 360px; font-size: 64px; opacity: .3; }
+
+    .sun {
+      position: absolute;
+      top: 90px;
+      right: 90px;
+      font-size: 110px;
+      filter: drop-shadow(0 8px 16px rgba(245,158,11,.35));
+    }
+  </style>
+</head>
+<body>
+
+  <span class="c1">☁️</span>
+  <span class="c2">☁️</span>
+  <span class="c3">☁️</span>
+  <span class="sun">☀️</span>
+
+  <div class="badge">Pronóstico ritual</div>
+  <div class="stamp"><span class="dot"></span> 9 · MAYO · 2026</div>
+
+  <h1><span class="name">Miranda</span>,<br>no va a llover.</h1>
+
+  <p class="sub">
+    Pronóstico ritual para <strong>BTS WORLD TOUR 'ARIRANG'</strong> en el Estadio GNP, CDMX.<br>
+    Cada clic aleja una nube. De verdad.
+  </p>
+
+  <div class="meta">
+    · Estadio GNP · Ciudad de México<br>
+    · Pronóstico real vía Open-Meteo
+  </div>
+
+  <div class="stat">
+    <div class="num">73<sup>%</sup></div>
+    <div class="label">de los 9 de mayo amanecen secos en CDMX</div>
+  </div>
+
+  <script>
+    // Signal readiness once fonts have loaded so headless capture waits.
+    document.fonts.ready.then(() => {
+      document.documentElement.dataset.ready = '1';
+    });
+  </script>
+</body>
+</html>
