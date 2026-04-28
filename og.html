@@ -80,23 +80,32 @@
 
     .stat {
       position: absolute;
-      top: 460px; right: 56px;
-      background: rgba(255,255,255,.78);
+      top: 450px; right: 56px;
+      background: rgba(255,255,255,.82);
       border: 1px solid rgba(15,23,42,.06);
       border-radius: 18px;
       padding: 18px 26px;
       text-align: center;
-      width: 280px;
+      width: 300px;
     }
-    .stat .num {
+    .stat .heading {
       font-family: 'Fraunces', 'Georgia', serif;
       font-weight: 800;
-      font-size: 72px;
+      font-size: 38px;
       line-height: 1;
       color: #0f172a;
+      letter-spacing: -.01em;
+    }
+    .stat .num {
+      margin-top: 10px;
+      font-family: 'Fraunces', 'Georgia', serif;
+      font-weight: 800;
+      font-size: 44px;
+      line-height: 1;
+      color: #d97706;
       letter-spacing: -.02em;
     }
-    .stat .num sup { font-size: 30px; color: #d97706; vertical-align: super; }
+    .stat .num sup { font-size: 22px; vertical-align: super; }
     .stat .label {
       margin-top: 8px;
       font-size: 13px;
@@ -139,8 +148,9 @@
   </div>
 
   <div class="stat">
+    <div class="heading">Días secos</div>
     <div class="num">73<sup>%</sup></div>
-    <div class="label">de los 9 de mayo amanecen secos en CDMX</div>
+    <div class="label">8 de los últimos 11 mayos · CDMX</div>
   </div>
 
   <script>
